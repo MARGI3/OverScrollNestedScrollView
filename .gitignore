@@ -1,0 +1,16 @@
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+*.class
+*.iml
+*.pyc
+/build
+/captures
+.externalNativeBuild
+.settings
+.project
+.classpath
+.vscode/
