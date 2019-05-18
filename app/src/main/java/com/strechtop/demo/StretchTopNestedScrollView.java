@@ -1,7 +1,7 @@
 package com.strechtop.demo;
 
 import android.content.Context;
-import android.support.v4.widget.NestedScrollView;
+import android.support.v4.widget.OpenedNestedScrollView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,7 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.LinearLayout;
 
-public class StretchTopNestedScrollView extends NestedScrollView {
+public class StretchTopNestedScrollView extends OpenedNestedScrollView {
 
     private View mTopView, mBottomView;
     private int mNormalHeight, mMaxHeight;
@@ -89,9 +89,7 @@ public class StretchTopNestedScrollView extends NestedScrollView {
     }
 
     @Override
-    protected boolean overScrollBy(int deltaX, int deltaY, int scrollX,
-                                   int scrollY, int scrollRangeX, int scrollRangeY,
-                                   int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
+    protected boolean openedOverScrollByCompat(int deltaX, int deltaY, int scrollX, int scrollY, int scrollRangeX, int scrollRangeY, int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
 
         if (scrollY == 0) {
             //down, zoom in
@@ -124,6 +122,7 @@ public class StretchTopNestedScrollView extends NestedScrollView {
         }
 
         return true;
+
     }
 
     @Override
