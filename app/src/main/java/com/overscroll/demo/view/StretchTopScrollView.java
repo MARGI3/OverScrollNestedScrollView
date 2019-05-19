@@ -1,4 +1,4 @@
-package com.strechtop.demo;
+package com.overscroll.demo.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

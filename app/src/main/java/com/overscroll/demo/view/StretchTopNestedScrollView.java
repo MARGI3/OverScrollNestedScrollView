@@ -1,8 +1,9 @@
-package com.strechtop.demo;
+package com.overscroll.demo.view;
 
 import android.content.Context;
 import android.support.v4.widget.OpenedNestedScrollView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -95,14 +96,20 @@ public class StretchTopNestedScrollView extends OpenedNestedScrollView {
             //down, zoom in
             if (deltaY < 0 && mTopView.getLayoutParams().height + Math.abs(deltaY) > mMaxHeight) {
                 mTopView.getLayoutParams().height = mMaxHeight;
+                Log.e("test", "zoom in 1");
             } else if (deltaY < 0 && mTopView.getLayoutParams().height + Math.abs(deltaY) <= mMaxHeight) {
                 mTopView.getLayoutParams().height += Math.abs(deltaY);
+                Log.e("test", "zoom in 2");
             }
+
+
             //up, zoom out
             else if (deltaY > 0 && mTopView.getLayoutParams().height - Math.abs(deltaY) < mNormalHeight) {
                 mTopView.getLayoutParams().height = mNormalHeight;
+                Log.e("test", "zoom out 1");
             } else if (deltaY > 0 && mTopView.getLayoutParams().height - Math.abs(deltaY) >= mNormalHeight) {
                 mTopView.getLayoutParams().height -= Math.abs(deltaY);
+                Log.e("test", "zoom out 2");
             }
         }
 
@@ -113,6 +120,7 @@ public class StretchTopNestedScrollView extends OpenedNestedScrollView {
         if (deltaY != 0 && scrollY == 0) {
             mTopView.requestLayout();
             mBottomView.requestLayout();
+            Log.e("test", "request layout");
         }
 
         if (mTopView.getLayoutParams().height == mNormalHeight) {
@@ -122,7 +130,6 @@ public class StretchTopNestedScrollView extends OpenedNestedScrollView {
         }
 
         return true;
-
     }
 
     @Override
@@ -152,6 +159,7 @@ public class StretchTopNestedScrollView extends OpenedNestedScrollView {
                     ResetAnimation animation = new ResetAnimation(mTopView, mNormalHeight);
                     animation.setDuration(400);
                     mTopView.startAnimation(animation);
+                    Log.e("test", "reset animation");
                 }
             }
         }

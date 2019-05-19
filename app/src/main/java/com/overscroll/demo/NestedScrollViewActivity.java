@@ -1,20 +1,22 @@
-package com.strechtop.demo;
+package com.overscroll.demo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.overscroll.demo.view.StretchTopNestedScrollView;
+
+public class NestedScrollViewActivity extends AppCompatActivity {
 
     StretchTopNestedScrollView stretchTopNestedScrollView;
-//    StretchTopScrollView stretchTopNestedScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle(R.string.title_nested_scroll_view_demo);
+        setContentView(R.layout.activity_nestedscrollview);
 
         stretchTopNestedScrollView = findViewById(R.id.stretch_top_view);
 
@@ -31,13 +33,5 @@ public class MainActivity extends AppCompatActivity {
                 descriptionTextView.setAlpha(factor);
             }
         });
-//        stretchTopNestedScrollView.setChangeListener(new StretchTopScrollView.onOverScrollChanged() {
-//            @Override
-//            public void onChanged(float factor) {
-//                descriptionTextView.setAlpha(factor);
-//            }
-//        });
     }
-
-
 }

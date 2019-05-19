@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">StrechTopNestedScrollview</string>
+    <string name="app_name">OverScrollNestedScrollView</string>
+
+    <string name="title_scroll_view_demo">ScrollView Demo</string>
+    <string name="title_nested_scroll_view_behavior_demo">NestedScrollView Behavior Demo</string>
+    <string name="title_nested_scroll_view_demo">NestedScrollView Demo</string>
+
+    <string name="button_nested_scroll_view">NestedScrollView Override</string>
+    <string name="button_nested_scroll_view_behavior">NestedScrollView Behavior</string>
+    <string name="button_scroll_view">ScrollView Override</string>
+
+    <string name="over_scroll_behavior_path">com.overscroll.demo.OverScrollBounceBehavior</string>
 </resources>
