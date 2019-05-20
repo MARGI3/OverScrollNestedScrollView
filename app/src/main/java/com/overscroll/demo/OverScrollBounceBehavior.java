@@ -85,7 +85,7 @@ public class OverScrollBounceBehavior extends CoordinatorLayout.Behavior<View> {
         //TYPE_TOUCH handle over scroll
         if (checkTouchType(type) && checkTargetView()) {
             if (mOverScrollY > 0 && mTargetView.getLayoutParams().height + Math.abs(mOverScrollY) <= mMaxHeight) {
-                mTargetView.getLayoutParams().height += Math.abs(mOverScrollY);
+                mTargetView.getLayoutParams().height = mNormalHeight + Math.abs(mOverScrollY);
                 mTargetView.requestLayout();
                 if (mListener != null) {
                     mListener.onScrollChanged(calculateRate(mTargetView, mMaxHeight, mNormalHeight));
